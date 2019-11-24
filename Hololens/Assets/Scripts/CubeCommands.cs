@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using static Grabber;
 public class CubeCommands : MonoBehaviour
 {
     // Called by GazeGestureManager when the user performs a Select gesture
@@ -11,6 +11,15 @@ public class CubeCommands : MonoBehaviour
             var rigidbody = this.gameObject.AddComponent<Rigidbody>();
             rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
         }
+
+        // get my newly made class:
+        Grabber grabberClass = gameObject.AddComponent<Grabber>();
+
+        // make a string - print it!
+        string hello = grabberClass.HelloWorld();
+        Debug.Log(hello);
+
+        grabberClass.webRequest();
 
         Debug.Log("DEBUG TEST PRINT PRINT PRINT");
     }
